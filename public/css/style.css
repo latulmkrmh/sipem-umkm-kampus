@@ -1,0 +1,65 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f3f6fb;
+    margin: 0;
+    padding: 40px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #ffffff;
+    width: 280px;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    margin: 0 0 8px;
+}
+
+.card p {
+    margin: 0 0 10px;
+    color: #555;
+}
+
+.status-aktif {
+    display: inline-block;
+    background: #e6f9ef;
+    color: #0f9d58;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: #1e4fd6;
+}
