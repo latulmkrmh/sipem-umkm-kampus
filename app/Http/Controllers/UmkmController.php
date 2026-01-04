@@ -39,13 +39,33 @@ class UmkmController extends Controller
     {
         $request->validate([
             'nama_umkm' => 'required',
+            'pemilik' => 'required',
+            'deskripsi'=> 'required',
+            'kontak' => 'required',
             'kategori' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            'jam_operasional' => 'required',
+            'alamat' => 'required',
         ]);
-
-        Umkm::create($request->all());
+        Umkm::create([
+            'nama_umkm' => $request->nama_umkm,
+            'pemilik' => $request->pemilik,
+            'deskripsi' => $request ->deskripsi,
+            'kontak' => $request ->kontak,
+            'kategori' => $request->kategori,
+            'status' => $request->status,
+            'jam_operasional' => $request->jam_operasional,
+            'alamat' => $request->alamat,
+        ]);
 
         return redirect('/admin/umkm')
             ->with('success', 'Data UMKM berhasil ditambahkan');
+    }
+    public function destroy($id)
+    {
+    $umkm = \App\Models\Umkm::findOrFail($id);
+    $umkm->delete();
+
+    return redirect('/admin/umkm')->with('success', 'UMKM berhasil dihapus');
     }
 }
